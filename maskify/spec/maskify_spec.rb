@@ -1,10 +1,11 @@
 require 'maskify'
 
 describe Test do 
+  before(:each) do
+    @test = Test.new
+  end
+  
   describe '.maskify' do 
-     before(:each) do
-       @test = Test.new
-     end
     it 'returns input if its length is less than 5' do
       expect(@test.maskify('Temi')).to eq 'Temi'
     end
