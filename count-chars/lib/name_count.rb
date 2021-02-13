@@ -1,14 +1,22 @@
 class NameCount
-
+  
   def initialize(letters:)
     @letters = letters
+    @count_initials = {}
   end
-
+  
   def calculate
-    {letter => @letters.count(letter)}
+    unique_letters.each do |letter|
+      @count_initials[letter] = @letters.count(letter)
+    end
+    @count_initials
   end
+  
 
-  def letter
-    @letters.chr
+  private
+ 
+  def unique_letters
+    @letters.split("").uniq
   end
+ 
 end
