@@ -6,7 +6,7 @@ class NameCount
   end
   
   def calculate
-    invalid_input?
+    empty_string?
     unique_letters.each do |letter|
       @count_initials[letter] = @letters.count(letter)
     end
@@ -20,7 +20,7 @@ class NameCount
     @letters.split("").uniq
   end
 
-  def invalid_input?
+  def empty_string?
     return {} if @letters == ""
   end
  
